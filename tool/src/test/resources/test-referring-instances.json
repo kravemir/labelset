@@ -1,0 +1,14 @@
+[
+  {
+    "count": 1,
+    "instanceContentRef": "instance_01"
+  },
+  {
+    "count": 1,
+    "instanceContentRef": "instance_02"
+  },
+  {
+    "count": 31,
+    "instanceContentRef": "instance_03"
+  }
+]

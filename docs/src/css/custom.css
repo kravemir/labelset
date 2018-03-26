@@ -1,0 +1,15 @@
+
+ol.chapter li.affix:first-child {
+  font-size: 1.5em;
+  line-height: 2.2em;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+ol.chapter li strong:first-child {
+    margin-right: 2px;
+}
+
+ol.chapter li.spacer {
+  margin: 8px 0;
+}

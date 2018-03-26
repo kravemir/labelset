@@ -1,0 +1,28 @@
+configurations {
+    testlibCompile.extendsFrom compile
+    testCompile.extendsFrom testlibCompile
+}
+
+sourceSets {
+    testlib {
+        java {
+            compileClasspath += sourceSets.main.output + configurations.testlibCompile
+        }
+        resources.srcDir file('src/testlib/resources')
+    }
+    test {
+        java {
+            compileClasspath += sourceSets.testlib.output
+            runtimeClasspath += sourceSets.testlib.output
+        }
+    }
+}
+
+task testlibJar(type: Jar) {
+    from sourceSets.testlib.output
+    classifier 'testlib'
+}
+
+artifacts {
+    testlibCompile testlibJar
+}

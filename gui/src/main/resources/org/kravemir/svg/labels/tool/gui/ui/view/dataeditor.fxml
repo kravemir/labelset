@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<StackPane xmlns="http://javafx.com/javafx"
+           fx:controller="org.kravemir.svg.labels.tool.gui.ui.view.DataEditorPresenter"
+           styleClass="editorComponent,formBox,distanced"
+           minHeight="180.0" prefHeight="259.0" prefWidth="525.0"
+           maxWidth="Infinity"
+           xmlns:fx="http://javafx.com/fxml">
+    <VBox styleClass="formBox, distanced">
+        <GridPane hgap="12" vgap="8">
+            <Label GridPane.rowIndex="0" GridPane.columnIndex="0">Data set:</Label>
+            <ChoiceBox fx:id="printLabelChoiceBox"
+                       GridPane.rowIndex="0" GridPane.columnIndex="1"
+                       prefWidth="240" maxWidth="Infinity"/>
+
+            <Label GridPane.rowIndex="1" GridPane.columnIndex="0">Instance:</Label>
+            <ComboBox fx:id="printDataComboBox"
+                      GridPane.rowIndex="1" GridPane.columnIndex="1"
+                      disable="true" promptText="Select dataset first ..."
+                      prefWidth="220" maxWidth="Infinity"/>
+        </GridPane>
+        <Separator orientation="HORIZONTAL"/>
+        <GridPane hgap="12" vgap="8" fx:id="contentGridPane"/>
+        <StackPane VBox.vgrow="ALWAYS"/>
+        <HBox styleClass="formBox">
+            <StackPane HBox.hgrow="ALWAYS"/>
+            <Button fx:id="cancelButton">Cancel</Button>
+            <Button fx:id="saveButton">Save</Button>
+        </HBox>
+    </VBox>
+</StackPane>

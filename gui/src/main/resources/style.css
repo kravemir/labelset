@@ -1,0 +1,124 @@
+
+.projectHistoryList .projectNameLabel {
+  -fx-text-fill: rgb(60, 60, 60);
+  -fx-padding: 4 6 1 6;
+  -fx-font-family: "DejaVu Sans";
+  -fx-font-family: "Noto Sans";
+  -fx-font-size: 13;
+}
+
+.projectHistoryList .projectPathLabel {
+  -fx-text-fill: rgb(120, 120, 120);
+  -fx-padding: 1 6 4 6;
+  -fx-font-family: "DejaVu Sans";
+  -fx-font-family: "Noto Sans";
+  -fx-font-size: 11;
+}
+
+.formBox Label {
+  -fx-font-size: 12px;
+}
+
+.formBox Button {
+  -fx-padding: 6 8 5;
+  -fx-font-size: 12px;
+  -fx-border-style: none;
+  -fx-border-width: 0;
+  -fx-border-insets: 0;
+  -fx-background-radius: 2.5;
+  -fx-background-color: #e7e7e7;
+  -fx-text-fill: #474747;
+  -fx-effect: innershadow( gaussian, #dadada, 1.5, 0, -1, -1);
+}
+
+.formBox Button:hover {
+  -fx-background-color: #dcdcdc;
+  -fx-text-fill: #323232;
+}
+
+.formBox Button:pressed {
+  -fx-effect: innershadow( gaussian, #cacaca, 1.5, 0, 1, 1);
+}
+
+.appNameLabel {
+  -fx-font-family: "DejaVu Sans";
+  -fx-font-family: "Noto Sans";
+  -fx-font-size: 28;
+}
+
+.appVersionLabel {
+  -fx-font-family: "DejaVu Sans";
+  -fx-font-family: "Noto Sans";
+  -fx-font-size: 12;
+}
+
+NavigationTabsPane > VBox.navigationTabsPaneButtonsBox {
+  -fx-background-color: #EEEEEE;
+  -fx-border-color: #e7e7e7;
+  -fx-border-width: 0 1 0 0;
+  -fx-padding: 0;
+}
+
+NavigationTabsPane > VBox.navigationTabsPaneButtonsBox > Button {
+  -fx-background-color: transparent;
+  -fx-border-width: 0;
+}
+
+NavigationTabsPane > VBox.navigationTabsPaneButtonsBox > Button > Label {
+  -fx-background-color: transparent;
+  -fx-border-width: 0;
+  -fx-padding: 16 12;
+  -fx-text-fill: #606060;
+  -fx-text-alignment: right;
+  -fx-font-size: 12px;
+}
+
+NavigationTabsPane > VBox.navigationTabsPaneButtonsBox > Button.selected {
+  -fx-background-color: #e7e7e7;
+}
+
+NavigationTabsPane > VBox.navigationTabsPaneButtonsBox > Button:hover > Label {
+  -fx-text-fill: #222222;
+  -fx-effect: dropshadow(gaussian, #77aaff, 2, 0, 0, 0);
+}
+
+NavigationTabsPane > VBox.navigationTabsPaneButtonsBox > Button.selected > Label {
+  -fx-text-fill: #222222;
+  -fx-effect: dropshadow(gaussian, #aaaaaa, 2, 0, 1, 1);
+}
+
+NavigationTabsPane > StackPane.navigationTabsPaneContentPane {
+  -fx-background-color: #FCFCFC;
+}
+
+.formBox {
+  -fx-spacing: 8;
+}
+
+.formBox.distanced {
+  -fx-spacing: 12;
+}
+
+.imageViewWrapper {
+  -fx-padding: 8;
+  -fx-background-color: #FFF;
+  -fx-background-radius: 1;
+  -fx-border-color: #F0F0F0;
+  -fx-border-radius: 1;
+}
+
+.imageViewWrapperScroll > .viewport {
+  -fx-background-color: #FFF;
+}
+
+.imageViewWrapperScroll > .viewport .imageViewWrapper {
+  -fx-border-width: 0;
+  -fx-border-radius: 0;
+}
+
+ExistingLabelPrintComponent,
+.editorComponent  {
+  -fx-padding: 12 12;
+  -fx-spacing: 12;
+}
+

@@ -1,0 +1,9 @@
+include('library')
+include('tool')
+include('gui')
+
+rootProject.name = 'Lablie'
+
+project(':library').name = 'lablie'
+project(':tool').name = 'lablie-tool'
+

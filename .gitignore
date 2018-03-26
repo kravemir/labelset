@@ -1,0 +1,10 @@
+# IntelliJ IDEA
+.idea/*
+!.idea/runConfigurations/
+*.iml
+
+# Other
+.gradle
+*/out
+*/build
+buildSrc/buildSrc/build

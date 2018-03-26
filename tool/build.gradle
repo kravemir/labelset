@@ -1,0 +1,82 @@
+apply from: "${rootDir}/gradle/sourceSetTestlib.gradle"
+
+configurations {
+    integrationTestCompile.extendsFrom compile, testlibCompile
+}
+
+sourceSets {
+    integrationTest {
+        java {
+            compileClasspath += main.output
+            runtimeClasspath += main.output
+
+            compileClasspath += sourceSets.testlib.output
+            runtimeClasspath += sourceSets.testlib.output
+
+            srcDir file('src/integrationTest/java')
+        }
+        resources.srcDir file('src/integrationTest/resources')
+    }
+}
+
+dependencies {
+    compile project(':lablie')
+    compile group: 'info.picocli', name: 'picocli', version: '3.9.1'
+
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.8.1'
+    compile group: 'org.apache.commons', name: 'commons-csv', version: '1.5'
+
+    testlibCompile project(path: ':lablie', configuration: 'testlibCompile')
+
+    integrationTestCompile group: 'org.apache.pdfbox', name: 'pdfbox', version: '2.0.12'
+}
+
+task generateManPage(type: JavaExec) {
+    main = 'org.kravemir.svg.labels.tool.GenManPage'
+
+    classpath = sourceSets.test.runtimeClasspath
+
+    def outputFile = file("${buildDir}/generated/man/lablie.1")
+    doFirst {
+        outputFile.parentFile.mkdirs()
+        standardOutput = new FileOutputStream(outputFile)
+    }
+}
+build.dependsOn generateManPage
+
+jar {
+    manifest {
+        attributes('Main-Class': 'org.kravemir.svg.labels.tool.ToolRunner')
+    }
+}
+
+task executableJar(type: Jar, dependsOn: classes) {
+    manifest {
+        attributes('Main-Class': 'org.kravemir.svg.labels.tool.ToolRunner')
+    }
+
+    classifier 'executable'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+build.dependsOn executableJar
+
+task integrationTest(type: Test) {
+    testClassesDir = sourceSets.integrationTest.output.classesDir
+    classpath = sourceSets.integrationTest.runtimeClasspath
+    environment = System.getenv() + ['LABLIE_BIN': "java -jar ${executableJar.outputs.files.getSingleFile()}"]
+}
+integrationTest.dependsOn executableJar
+build.dependsOn integrationTest
+
+tasks.withType(JavaCompile.class) {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+idea {
+    module {
+        sourceDirs -= file('src/integrationTest/java')
+        testSourceDirs += file('src/integrationTest/java')
+    }
+}

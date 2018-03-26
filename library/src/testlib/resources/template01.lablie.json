@@ -1,0 +1,21 @@
+{
+  "attributes": [
+    { "key": "name" },
+    { "key": "description" },
+    { "key": "date" }
+  ],
+  "contentReplaceRules": [
+    {
+      "value": "$name",
+      "elementXPath": "//*[@id='nameText']"
+    },
+    {
+      "value": "$description",
+      "elementXPath": "//*[*[text()='Description']]"
+    },
+    {
+      "value": "$date",
+      "elementXPath": "//*[*[text()='__DATE__']]"
+    }
+  ]
+}

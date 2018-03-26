@@ -1,0 +1,50 @@
+package org.kravemir.svg.labels.model;
+
+class TiledPaper {
+    double with;
+    double height;
+
+    double tile_offset_x;
+    double tile_offset_y;
+    double tile_width;
+    double tile_height;
+    double tile_delta_x;
+    double tile_delta_y;
+}
+
+
+class LabelTemplateDescriptor {
+
+    class Attribute {
+        string key;
+    }
+
+    class ContentReplaceRule {
+        string value;
+        string elementXPath;
+        string if;
+    }
+
+    repeated Attribute attribute;
+    repeated ContentReplaceRule contentReplaceRule;
+}
+
+class LabelGroup {
+
+    class Instance {
+        int32 count;
+        bool fillPage;
+        map<string,string> instanceContent;
+    }
+
+    string template;
+    LabelTemplateDescriptor templateDescriptor;
+    repeated Instance instance;
+}
+
+class DocumentRenderOptions {
+    bool renderPageBorders;
+    bool renderTileBorders;
+    bool renderLabelBorders;
+}
+
