@@ -18,7 +18,7 @@ Labelset provides:
 - generation of tiled labels documents:
   - paper specification supports paper size, label size, label offset and label spacing options.
 
-## Installation
+## Use as a command line tool
 
 The tool offers command-line interface as a simple way to invoke these manipulations without need to write any custom code.
 
@@ -38,7 +38,13 @@ TO BE documented.
 
 Check [complete help](docs/help.md) to see all available options.
 
-## Library usage
+## Use as a docker image
+
+Prepared docker images are available in [Docker Hub](https://hub.docker.com/r/kravemir/labelset/tags).
+
+TO BE documented more.
+
+## Use as a library
 
 First, use `go get` to install the latest version of the library.
 

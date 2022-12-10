@@ -1,5 +1,13 @@
 
+/.dockerignore
+/.editorconfig
+/.gitignore
+
 /.git
+/.github
 /.idea
 /Dockerfile
 /snap
+
+# build outputs
+/labelset
