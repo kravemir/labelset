@@ -1,0 +1,16 @@
+labelset is a tool to generate documents with labels for printing
+
+Usage:
+  labelset [command]
+
+Available Commands:
+  completion  Generate the autocompletion script for the specified shell
+  help        Help about any command
+  instance    Fill label template with instance data
+  project     Group command for project manipulation sub-commands
+  tile        Generated documents with tiled labels
+
+Flags:
+  -h, --help   help for labelset
+
+Use "labelset [command] --help" for more information about a command.

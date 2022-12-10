@@ -1,28 +1,37 @@
-lablie
-==========
+labelset
+========
 
-[![lablie](https://snapcraft.io/lablie/badge.svg)](https://snapcraft.io/lablie)
+[![Go Reference](https://pkg.go.dev/badge/github.com/kravemir/labelset.svg)](https://pkg.go.dev/github.com/kravemir/labelset)
+[![Go Report Card](https://goreportcard.com/badge/github.com/kravemir/labelset)](https://goreportcard.com/report/github.com/kravemir/labelset)
 
+Labelset is a CLI tool and a library for generating masses of labels for printing, in quick and simple way.
 
-Designed to be simply usable java library and java tool for generation of documents with labels to print.
+## About
 
-The library consist of renderers performing SVG manipulations for creation of label materials.
+Labelset provides:
 
-## CLI tool
+- population of SVG templates with instance:
+  - XPath based query for text replacements,
+  - standard Go's template for replacement contents,
+  - cel-go based conditions.
+- generation of tiled labels documents:
+  - paper specification supports paper size, label size, label offset and label spacing options.
 
-The tool offers commandline a simple way to invoke these manipulations without need to write any java code.
+## Installation
 
-###  Tool installation
+The tool offers command-line interface as a simple way to invoke these manipulations without need to write any custom code.
 
-The tool can be installed as [snap package from snapcraft.io][snapcraft-io-package]:
+###  CLI tool installation
 
-```
-sudo snap install lablie
+The tool can be installed as a go module:
+
+```shell
+go install github.com/kravemir/labelset@latest
 ```
 
 ### Usage examples
 
-See [examples at docs][docs-cli-examples].
+TO BE documented.
 
 ### CLI options
 
@@ -30,15 +39,19 @@ Check [complete help](docs/help.md) to see all available options.
 
 ## Library usage
 
-Library's artifacts are published to maven central. See details [at search.maven.org][search-maven-org-by-group], or [at mvnrepository.com][mvnrepository-com-group].
+First, use `go get` to install the latest version of the library.
 
-For documentation and javadocs, see [kravemir.gitlab.io/lablie/developers](https://kravemir.gitlab.io/lablie/developers).
+```shell
+go get -u github.com/kravemir/labelset@latest
+```
+
+Next, include it in your application:
+
+```go
+import "github.com/kravemir/labelset"
+```
 
 ## License
 
-The project is licensed under Apache License, Version 2.0, January 2004. See [LICENSE](LICENSE).
+The project is licensed under Apache License, which allows proprietary use. See [LICENSE](LICENSE) for more details.
 
-[docs-cli-examples]: https://kravemir.gitlab.io/lablie/cli-examples/
-[snapcraft-io-package]: https://snapcraft.io/lablie
-[search-maven-org-by-group]: https://search.maven.org/search?q=kravemir
-[mvnrepository-com-group]: https://mvnrepository.com/artifact/org.kravemir.svg.labels

@@ -1,29 +1,25 @@
-FROM openjdk:8-jdk-alpine as builder
+ARG GO_VERSION=1.19.3
+ARG ALPINE_VERSION=3.16
 
-RUN apk add --no-cache gradle inkscape make
 
-ENV GRADLE_OPTS "-Dorg.gradle.daemon=false"
+FROM golang:${GO_VERSION}-alpine${ALPINE_VERSION} AS builder
+
+RUN apk add --no-cache inkscape make
 
 RUN mkdir /build
 WORKDIR /build
 
-RUN gradle wrapper --gradle-version 4.6
-RUN ./gradlew wrapper --gradle-version 4.6
+COPY go.mod go.sum ./
+RUN go mod download
 
-COPY . /build
-RUN ./gradlew build -x integrationTest
-
-RUN mkdir -p /build-result/lablie /build-result/usr/bin/ \
-    && cp /build/tool/build/libs/lablie-tool-*-executable.jar /build-result/lablie/lablie.jar \
-    && echo -e "#!/bin/sh\njava -jar /lablie/lablie.jar \"\$@\"" > /build-result/usr/bin/lablie \
-    && chmod +x /build-result/usr/bin/lablie
-
-# TODO: make integrationTest stable, order of files differs!!
+COPY . .
+RUN go build -o ./labelset -v .
+RUN chmod 755 ./labelset
 
 
-FROM openjdk:8-jre-alpine
+FROM alpine:${ALPINE_VERSION}
 
 RUN apk add --no-cache inkscape make
 
-COPY --from=builder /build-result /
+COPY --from=builder /build/labelset /usr/local/bin
 

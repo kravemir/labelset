@@ -1,0 +1,27 @@
+{
+  "attributes": [
+    { "key": "text" },
+    { "key": "text_size" }
+  ],
+  "contentReplaceRules": [
+    {
+      "value": "{{.Instance.text}}",
+      "elementXPath": "//*[starts-with(@id,'text-')]"
+    },
+    {
+      "value": "",
+      "if": "Instance['TextSize'] != 'small'",
+      "elementXPath": "//*[starts-with(@id,'text-small')]"
+    },
+    {
+      "value": "",
+      "if": "Instance['TextSize'] != 'medium'",
+      "elementXPath": "//*[starts-with(@id,'text-medium')]"
+    },
+    {
+      "value": "",
+      "if": "Instance['TextSize'] != 'large'",
+      "elementXPath": "//*[starts-with(@id,'text-large')]"
+    }
+  ]
+}

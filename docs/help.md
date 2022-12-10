@@ -1,67 +1,66 @@
-# `lablie` help
+# `labelset` help
 
 ```
-Usage: lablie [-hv] [COMMAND]
-Tool to generate documents with labels for printing.
-  -h, --help      display a help message
-  -v, --version   display version info
-Commands:
-  tile      Tile labels
-  instance  Fill label template with instance data
-  project   Group command for project manipulation sub-commands
+labelset is a tool to generate documents with labels for printing
+
+Usage:
+  labelset [command]
+
+Available Commands:
+  completion  Generate the autocompletion script for the specified shell
+  help        Help about any command
+  instance    Fill label template with instance data
+  project     Group command for project manipulation sub-commands
+  tile        Generated documents with tiled labels
+
+Flags:
+  -h, --help   help for labelset
+
+Use "labelset [command] --help" for more information about a command.
 ```
 
 Command `tile`:
 ```
-Usage: lablie tile [OPTIONS] SOURCE TARGET
-Tile labels
-      SOURCE                 Path to SVG file containing a label
-      TARGET                 Path to SVG file which should be generated
-      --dataset-csv FILE     Path to CSV file containing instances
-      --dataset-csv-format FORMAT
-                             Sets format for parsing CSV dataset (available options:
-                               Default, Excel, InformixUnload, InformixUnloadCsv,
-                               MySQL, PostgreSQLCsv, PostgreSQLText, RFC4180, TDF)
-      --dataset-json FOLDER  Path to folder containing JSON files for instances
-      --instance KEY         Key of instance to be rendered
-      --instance-json FILE   Path to JSON file containing values for single instance
-      --instances-json FILE  Path to JSON file containing array of instances (can be
-                               used in combination with --dataset-json)
-      --label-delta mm mm    X and Y delta between labels in mm, ie. 5 5
-      --label-offset mm mm   X and Y offset of the first label in mm, ie. 5 5
-      --label-size mm mm     Width and height of label in mm, ie.
-      --paper-size mm mm     Width and height of the paper in mm, ie. 210 297 for A4
-                               paper portrait
-      --template-descriptor FILE
-                             Path to JSON file containing descriptor of template
-  -h, --help                 display a help message
+Generated documents with tiled labels
+
+Usage:
+  labelset tile [SOURCE] [TARGET] [flags]
+
+Flags:
+  -h, --help                         help for tile
+      --instance-json string         Path to JSON file containing values for single instance
+      --label-offset vector64        X and Y offset of the first label in mm, ie. 5 5 (default 0.000000,0.000000)
+      --label-size size64            Width and height of label in mm, ie. "5x5" (default 0.000000x0.000000)
+      --label-spacing vector64       X and Y spacing between labels in mm, ie. 5 5 (default 0.000000,0.000000)
+      --paper-size size64            Width and height of the paper in mm, ie. "210x297" for A4 paper portrait (default 0.000000x0.000000)
+      --template-descriptor string   Path to JSON file containing descriptor of template
 ```
 
 Command `instance`:
 ```
-Usage: lablie instance [OPTIONS] SOURCE TARGET
 Fill label template with instance data
-      SOURCE   Path of a SVG file containing a label
-      TARGET   Path of a SVG file which should be generated
-      --instance-json <instanceJsonFile>
-               Path to JSON file containing values for single instance
-  -h, --help   display a help message
+
+Usage:
+  labelset instance [SOURCE] [TARGET] [flags]
+
+Flags:
+  -h, --help                         help for instance
+      --instance-json string         Path to JSON file containing values for single instance
+      --template-descriptor string   Path to JSON file containing descriptor of template
 ```
 
 Command `project`:
 ```
-Usage: lablie project [OPTIONS] [PROJECT_FILE] [COMMAND]
 Group command for project manipulation sub-commands
-      [PROJECT_FILE]   File containing project configuration
-  -h, --help           display a help message
-Commands:
-  generate-makefile  Generates makefile for project
-```
 
-Command `project generate-makefile`:
-```
-Usage: lablie project generate-makefile [OPTIONS]
-Generates makefile for project
-  -h, --help      Show this help message and exit.
-  -V, --version   Print version information and exit.
+Usage:
+  labelset project [command]
+
+Available Commands:
+  init                      Generates main Makefile for project
+
+Flags:
+  -h, --help   help for project
+
+Use "labelset project [command] --help" for more information about a command.
 ```

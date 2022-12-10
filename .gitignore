@@ -3,8 +3,5 @@
 !.idea/runConfigurations/
 *.iml
 
-# Other
-.gradle
-*/out
-*/build
-buildSrc/buildSrc/build
+# build outputs
+labelset

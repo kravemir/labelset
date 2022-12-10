@@ -1,7 +1,5 @@
 
-/.gradle
 /.git
 /.idea
 /Dockerfile
-/gradle/wrapper
 /snap

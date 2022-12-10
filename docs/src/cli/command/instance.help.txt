@@ -1,0 +1,9 @@
+Fill label template with instance data
+
+Usage:
+  labelset instance [SOURCE] [TARGET] [flags]
+
+Flags:
+  -h, --help                         help for instance
+      --instance-json string         Path to JSON file containing values for single instance
+      --template-descriptor string   Path to JSON file containing descriptor of template
