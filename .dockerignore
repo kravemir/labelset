@@ -11,3 +11,6 @@
 
 # build outputs
 /labelset
+
+# temporary dirs
+/tmp

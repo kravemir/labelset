@@ -23,6 +23,9 @@ func rootCmd() *cobra.Command {
 
 	rootCmd.AddCommand(projectCmd())
 
+	rootCmd.AddCommand(genMarkdownCmd())
+	rootCmd.AddCommand(genManPageCmd())
+
 	return rootCmd
 }
 

@@ -36,11 +36,11 @@ TO BE documented.
 
 ### CLI options
 
-Check [complete help](docs/help.md) to see all available options.
+Check [complete help](docs/cli) to see all available options.
 
 ## Use as a docker image
 
-Prepared docker images are available in [Docker Hub](https://hub.docker.com/r/kravemir/labelset/tags).
+Prepared docker images are available in [Docker Hub repository](https://hub.docker.com/r/kravemir/labelset/tags).
 
 TO BE documented more.
 
