@@ -19,13 +19,15 @@ RUN chmod 755 ./labelset
 
 FROM alpine:${ALPINE_VERSION} as base
 
-RUN apk add --no-cache inkscape make musl musl-utils musl-locales
+RUN apk add --no-cache inkscape make musl musl-utils musl-locales bash-completion
 
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
 COPY --from=builder /build/labelset /usr/local/bin
+
+RUN labelset completion bash > /usr/share/bash-completion/completions/labelset
 
 
 FROM base as extra-fonts
@@ -34,6 +36,3 @@ RUN apk add ttf-dejavu ttf-liberation ttf-linux-libertine texmf-dist-fontsextra 
     mkdir -p ~/.fonts && \
     ln -s /usr/share/texmf-dist/fonts/opentype/ ~/.fonts/ && \
     fc-cache -v -f
-
-
-FROM base

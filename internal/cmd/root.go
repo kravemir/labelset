@@ -16,6 +16,10 @@ func rootCmd() *cobra.Command {
 
 		SilenceErrors: true,
 		SilenceUsage:  true,
+
+		CompletionOptions: cobra.CompletionOptions{
+			HiddenDefaultCmd: true,
+		},
 	}
 
 	rootCmd.AddCommand(tileCmd())

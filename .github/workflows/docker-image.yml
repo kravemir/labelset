@@ -59,6 +59,7 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          target: base
 
 # TODO: build conditionally on releases only, this is crazy big
 #      - name: Build and push images (extra-fonts flavor)
