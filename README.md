@@ -3,6 +3,7 @@ labelset
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/kravemir/labelset.svg)](https://pkg.go.dev/github.com/kravemir/labelset)
 [![Go Report Card](https://goreportcard.com/badge/github.com/kravemir/labelset)](https://goreportcard.com/report/github.com/kravemir/labelset)
+[![Test](https://github.com/kravemir/labelset/actions/workflows/test.yml/badge.svg)](https://github.com/kravemir/labelset/actions/workflows/test.yml)
 
 Labelset is a CLI tool and a library for generating masses of labels for printing, in quick and simple way.
 
