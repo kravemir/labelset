@@ -11,10 +11,10 @@ Labelset is a CLI tool and a library for generating masses of labels for printin
 
 Labelset provides:
 
-- population of SVG templates with instance:
+- instance creation from SVG-based templates:
   - XPath based query for matching text elements for replacements,
   - standard feature rich [text/template](https://pkg.go.dev/text/template) for replacement contents.
-- generation of tiled labels documents:
+- label tiling for printing on pre-cut tiled papers:
   - paper specification supports paper size, label size, label offset and label spacing options.
 
 ## Use as a command line tool
@@ -35,7 +35,7 @@ TO BE documented.
 
 ### CLI options
 
-Check [complete help](docs/cli) to see all available options.
+Check [complete help](docs/content/cli) to see all available options.
 
 ## Use as a docker image
 

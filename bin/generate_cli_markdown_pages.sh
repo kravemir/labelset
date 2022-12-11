@@ -5,6 +5,7 @@ PROJECT_DIRECTORY="$(dirname "${SCRIPT_DIRECTORY}")"
 
 cd "${PROJECT_DIRECTORY}"
 
-mkdir -p docs/cli
+rm -rf docs/content/cli
+mkdir -p docs/content/cli
 
-./labelset gen-markdown docs/cli
+./labelset gen-markdown docs/content/cli
