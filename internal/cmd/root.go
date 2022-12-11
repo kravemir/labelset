@@ -20,6 +20,8 @@ func rootCmd() *cobra.Command {
 		CompletionOptions: cobra.CompletionOptions{
 			HiddenDefaultCmd: true,
 		},
+
+		DisableAutoGenTag: true,
 	}
 
 	rootCmd.AddCommand(tileCmd())
