@@ -12,9 +12,8 @@ Labelset is a CLI tool and a library for generating masses of labels for printin
 Labelset provides:
 
 - population of SVG templates with instance:
-  - XPath based query for text replacements,
-  - standard Go's template for replacement contents,
-  - cel-go based conditions.
+  - XPath based query for matching text elements for replacements,
+  - standard feature rich [text/template](https://pkg.go.dev/text/template) for replacement contents.
 - generation of tiled labels documents:
   - paper specification supports paper size, label size, label offset and label spacing options.
 

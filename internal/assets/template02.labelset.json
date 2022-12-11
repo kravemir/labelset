@@ -5,22 +5,15 @@
   ],
   "contentReplaceRules": [
     {
-      "value": "{{.Instance.text}}",
-      "elementXPath": "//*[starts-with(@id,'text-')]"
-    },
-    {
-      "value": "",
-      "if": "Instance['TextSize'] != 'small'",
+      "value": "{{if eq .Instance.TextSize \"small\"}}{{.Instance.text}}{{end}}",
       "elementXPath": "//*[starts-with(@id,'text-small')]"
     },
     {
-      "value": "",
-      "if": "Instance['TextSize'] != 'medium'",
+      "value": "{{if eq .Instance.TextSize \"medium\"}}{{.Instance.text}}{{end}}",
       "elementXPath": "//*[starts-with(@id,'text-medium')]"
     },
     {
-      "value": "",
-      "if": "Instance['TextSize'] != 'large'",
+      "value": "{{if eq .Instance.TextSize \"large\"}}{{.Instance.text}}{{end}}",
       "elementXPath": "//*[starts-with(@id,'text-large')]"
     }
   ]
