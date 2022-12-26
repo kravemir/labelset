@@ -43,9 +43,14 @@ func NewTemplate(
 func (tmpl *Template) Render(content map[string]any) (*xmlquery.Node, error) {
 	svgDocument, err := xmlquery.Parse(strings.NewReader(tmpl.svg))
 	if err != nil {
-		panic(err)
+		return nil, fmt.Errorf("parse SVG document: %w", err)
 	}
-	svgNode := xmlquery.FindOne(svgDocument, "//svg")
+
+	// namespace varies, see: https://github.com/antchfx/xmlquery/issues/96
+	svgNode := xmlquery.FindOne(svgDocument, `//*[local-name()="svg"]`)
+	if svgNode == nil {
+		return nil, fmt.Errorf("not found root <svg /> element")
+	}
 
 	for ruleIndex, rule := range tmpl.compiledDescriptor.contentReplaceRules {
 		err = rule(svgNode, content)
@@ -59,7 +64,9 @@ func (tmpl *Template) Render(content map[string]any) (*xmlquery.Node, error) {
 
 func replaceTextContents(node *xmlquery.Node, value string) {
 	valueLines := strings.Split(value, "\n")
-	spanNodes := xmlquery.Find(node, "tspan")
+
+	// namespace varies, see: https://github.com/antchfx/xmlquery/issues/96
+	spanNodes := xmlquery.Find(node, `*[local-name()="tspan"]`)
 
 	for idx, spanNode := range spanNodes {
 		lineValue := ""
