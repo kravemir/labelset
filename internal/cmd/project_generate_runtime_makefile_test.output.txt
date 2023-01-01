@@ -19,19 +19,19 @@ ${TMP_DIR}/products/%.svg: src/products/%.json | ${OUT_DIR}/products
 	$(LABELSET_BIN) tile $(OUTPUTS_products_PAPER) --instance-json "$<" src/product.svg "$@"
 
 ${OUT_DIR}/products/%.pdf: ${TMP_DIR}/products/%.svg
-	inkscape --file="$<" --without-gui --export-pdf="$@"
+	inkscape "$<" --export-type="pdf" --export-filename="$@"
 
 ${OUT_DIR}/products_with_svg/%.svg: src/products/%.json | ${OUT_DIR}/products_with_svg
 	$(LABELSET_BIN) tile $(OUTPUTS_products_with_svg_PAPER) --instance-json "$<" src/product.svg "$@"
 
 ${OUT_DIR}/products_with_svg/%.pdf: ${OUT_DIR}/products_with_svg/%.svg
-	inkscape --file="$<" --without-gui --export-pdf="$@"
+	inkscape "$<" --export-type="pdf" --export-filename="$@"
 
 ${OUT_DIR}/series/%.svg: src/series/%.json | ${OUT_DIR}/series
 	$(LABELSET_BIN) tile $(OUTPUTS_series_PAPER) --instance-json "$<" src/series.svg "$@"
 
 ${OUT_DIR}/series/%.pdf: ${OUT_DIR}/series/%.svg
-	inkscape --file="$<" --without-gui --export-pdf="$@"
+	inkscape "$<" --export-type="pdf" --export-filename="$@"
 
 ${OUT_DIR}: ;
 	mkdir -p $@

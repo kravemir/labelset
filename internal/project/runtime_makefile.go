@@ -77,7 +77,7 @@ func GenerateRuntimeMakefile(project Project) (string, error) {
 				makefile.appendRule(
 					"${OUT_DIR}/"+outputSetKey+"/%.pdf",
 					svgOutputRule,
-					"inkscape --file=\"$<\" --without-gui --export-pdf=\"$@\"",
+					`inkscape "$<" --export-type="pdf" --export-filename="$@"`,
 				)
 				break
 			default:
