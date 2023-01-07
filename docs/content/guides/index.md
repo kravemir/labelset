@@ -1,6 +1,6 @@
 ---
 title: 'Guides'
-weight: 30
+weight: 20
 ---
 
 # Guides
