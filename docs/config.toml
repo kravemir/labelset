@@ -4,6 +4,9 @@ theme = "hugo-book"
 
 disableKinds = ['taxonomy', 'taxonomyTerm']
 
+[markup.goldmark.renderer]
+unsafe = true
+
 [markup.highlight]
 guessSyntax = true
 style = 'tango'

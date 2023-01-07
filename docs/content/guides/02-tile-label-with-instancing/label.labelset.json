@@ -1,0 +1,17 @@
+{
+  "attributes": [
+    { "key": "name" },
+    { "key": "extra" }
+
+  ],
+  "contentReplaceRules": [
+    {
+      "value": "{{.Instance.name}}",
+      "elementXPath": "//*[starts-with(@id,'product_name')]"
+    },
+    {
+      "value": "{{.Instance.extra}}",
+      "elementXPath": "//*[@id='extra_text']"
+    }
+  ]
+}

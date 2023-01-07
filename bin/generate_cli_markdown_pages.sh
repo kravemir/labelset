@@ -10,4 +10,4 @@ mkdir -p docs/content/cli
 
 go run ./main.go gen-markdown docs/content/cli
 
-echo -e '---\ntitle: CLI man\nweight: 40\n---' >> docs/content/cli/_index.md
+echo -e '---\ntitle: CLI man\nweight: 40\nbookCollapseSection: true\n---' >> docs/content/cli/_index.md

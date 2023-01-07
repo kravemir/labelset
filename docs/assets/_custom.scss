@@ -3,10 +3,65 @@ body {
   overflow: scroll;
 }
 
-h1 {
-  font-size: 1.6rem;
+h1,
+.markdown h1 {
+  font-size: 1.6875rem;
+  font-size: 1.375rem;
+  font-weight: bold;
 }
 
-h2 {
-  font-size: 1.3rem;
+h2,
+.markdown h2  {
+  font-weight: bold;
+  font-size: 1.375rem;
+  font-size: 1.25rem;
+  font-size: 1.3125rem;
+}
+
+h3,
+.markdown h3 {
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+figure.guide-thumb {
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+
+  width: fit-content;
+  margin: 0.375rem auto;
+  box-sizing: border-box;
+
+  background: rgba(0,0,0,0.075);
+  border: 1px solid rgba(0,0,0,0.075);
+  border-radius: 1px;
+
+  img {
+    width: auto;
+    max-width: 300px;
+    max-height: 300px;
+    background: white;
+  }
+
+  figcaption {
+    display: block;
+  }
+
+  figcaption h4 {
+    font-weight: normal;
+    font-size: 0.75rem;
+    margin: 0.25rem 0;
+  }
+}
+
+div.thumb-gallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  figure.guide-thumb {
+    margin: 0.375rem;
+  }
 }
