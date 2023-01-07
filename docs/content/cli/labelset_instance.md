@@ -1,9 +1,12 @@
+---
+title: "labelset instance"
+---
 ## labelset instance
 
 Fill label template with instance data
 
 ```
-labelset instance [SOURCE] [TARGET] [flags]
+labelset instance [flags] source target
 ```
 
 ### Options

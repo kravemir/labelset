@@ -1,3 +1,6 @@
+---
+title: "labelset project"
+---
 ## labelset project
 
 Group command for project manipulation sub-commands

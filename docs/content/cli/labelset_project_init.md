@@ -1,3 +1,6 @@
+---
+title: "labelset project init"
+---
 ## labelset project init
 
 Generates main Makefile for project

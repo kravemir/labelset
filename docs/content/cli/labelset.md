@@ -1,3 +1,6 @@
+---
+title: "labelset"
+---
 ## labelset
 
 labelset is a tool to generate documents with labels for printing

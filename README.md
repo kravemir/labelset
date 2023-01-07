@@ -5,17 +5,18 @@ labelset
 [![Go Report Card](https://goreportcard.com/badge/github.com/kravemir/labelset)](https://goreportcard.com/report/github.com/kravemir/labelset)
 [![Test](https://github.com/kravemir/labelset/actions/workflows/test.yml/badge.svg)](https://github.com/kravemir/labelset/actions/workflows/test.yml)
 
-Labelset is a CLI tool and a library for generating masses of labels for printing, in quick and simple way.
+Labelset is a CLI tool and a go library for generating masses of labels for printing, in quick and simple way.
 
 ## About
 
 Labelset provides:
 
 - instance creation from SVG-based templates:
-  - XPath based query for matching text elements for replacements,
-  - standard feature rich [text/template](https://pkg.go.dev/text/template) for replacement contents.
+  - [XPath](https://github.com/antchfx/xpath#supported-features) for matching text elements for replacements,
+  - standard feature rich [text/template](https://pkg.go.dev/text/template) for replacement contents,
+  - JSON file for instance data source.
 - label tiling for printing on pre-cut tiled papers:
-  - paper specification supports paper size, label size, label offset and label spacing options.
+  - specify paper by paper size, label size, label offset and label spacing options.
 
 ## Use as a command line tool
 

@@ -157,7 +157,7 @@ func tileCmd() *cobra.Command {
 	}
 
 	cmd := &cobra.Command{
-		Use:   "tile [SOURCE] [TARGET]",
+		Use:   "tile [flags] source target",
 		Short: "Generated documents with tiled labels",
 
 		Args: argsFunc,

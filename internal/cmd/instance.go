@@ -106,7 +106,7 @@ func instanceCmd() *cobra.Command {
 	}
 
 	cmd := &cobra.Command{
-		Use:   "instance [SOURCE] [TARGET]",
+		Use:   "instance [flags] source target",
 		Short: "Fill label template with instance data",
 
 		Args: argsFunc,

@@ -1,9 +1,12 @@
+---
+title: "labelset tile"
+---
 ## labelset tile
 
 Generated documents with tiled labels
 
 ```
-labelset tile [SOURCE] [TARGET] [flags]
+labelset tile [flags] source target
 ```
 
 ### Options

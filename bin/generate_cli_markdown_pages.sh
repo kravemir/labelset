@@ -8,4 +8,6 @@ cd "${PROJECT_DIRECTORY}"
 rm -rf docs/content/cli
 mkdir -p docs/content/cli
 
-./labelset gen-markdown docs/content/cli
+go run ./main.go gen-markdown docs/content/cli
+
+echo -e '---\ntitle: CLI man\nweight: 40\n---' >> docs/content/cli/_index.md
