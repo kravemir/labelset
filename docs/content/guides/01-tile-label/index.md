@@ -5,8 +5,6 @@ summary: The guide shows creation of portrait A4 PDF document with labels with 1
 weight: 01
 ---
 
-# {{< param title >}}
-
 {{< param summary >}}
 
 {{< figure src="label.svg" title="label.svg" class="guide-thumb" >}}

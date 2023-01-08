@@ -5,8 +5,6 @@ summary: The guide shows creation of instanced label portrait A4 documents with 
 weight: 02
 ---
 
-# {{< param title >}}
-
 {{< param summary >}}
 
 {{< figure src="label.svg" title="label.svg" class="guide-thumb" >}}

@@ -1,9 +1,7 @@
 ---
 title: 'Install'
-weight: 1
+weight: 15
 ---
-
-# Install
 
 ## From packages
 

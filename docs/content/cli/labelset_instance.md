@@ -1,5 +1,6 @@
 ---
 title: "labelset instance"
+noHeading: true
 ---
 ## labelset instance
 

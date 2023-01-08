@@ -8,16 +8,7 @@ _Print labels generation_
 
 ## About
 
-Labelset is a CLI tool and a go library for generating masses of labels for printing, in quick and simple way.
-
-Provided features:
-
-- instance creation from SVG-based templates:
-    - [XPath](https://github.com/antchfx/xpath#supported-features) for matching text elements for replacements,
-    - standard feature rich [text/template](https://pkg.go.dev/text/template) for replacement contents,
-    - JSON file for instance data source.
-- label tiling for printing on pre-cut tiled papers:
-    - specify paper by paper size, label size, label offset and label spacing options.
+{{< include-page-content page="/about" >}}
 
 ## Install
 
@@ -39,11 +30,19 @@ labelset tile \
 
 See [guides](/guides) for more usage examples.
 
-## Examples
+## Guides
 
-{{< hint info >}}
-Example output to be prepared
-{{< /hint >}}
+See [guides](/guides) for examples how to use the CLI interface.
+
+## Example
+
+Example tiled outputs:
+
+<div class="thumb-gallery">
+{{< figure src="guides/01-tile-label/label-tiled.svg" title="Tiled - without instancing" class="guide-thumb" >}}
+{{< figure src="guides/02-tile-label-with-instancing/label-tiled-honey.svg" title="Tiled - Honey" class="guide-thumb" >}}
+{{< figure src="guides/02-tile-label-with-instancing/label-tiled-oranges.svg" title="Tiled - Oranges" class="guide-thumb" >}}
+</div>
 
 ## Screenshoots
 

@@ -1,5 +1,6 @@
 ---
 title: "labelset"
+noHeading: true
 ---
 ## labelset
 

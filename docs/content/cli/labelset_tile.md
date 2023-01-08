@@ -1,5 +1,6 @@
 ---
 title: "labelset tile"
+noHeading: true
 ---
 ## labelset tile
 

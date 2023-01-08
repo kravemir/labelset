@@ -13,6 +13,7 @@ import (
 
 const frontMatterTemplate = `---
 title: "%s"
+noHeading: true
 ---
 `
 

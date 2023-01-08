@@ -1,5 +1,6 @@
 ---
 title: "labelset project init"
+noHeading: true
 ---
 ## labelset project init
 

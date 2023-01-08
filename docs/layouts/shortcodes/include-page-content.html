@@ -1,0 +1,2 @@
+{{ $page := .Get "page" }}
+{{ with .Site.GetPage $page }}{{ .Content }}{{ end }}
