@@ -11,63 +11,104 @@
       }
     }
   },
-  "outputsets": {
-    "products": {
-      "template": "src/product.svg",
-      "dataset": "products",
-      "outputMimetypes": [
-        "pdf"
-      ],
-      "paper": {
-        "width": 210,
-        "height": 297,
-        "tileOffset": {
-          "X": 5,
-          "Y": 8.5
-        },
-        "tileSize": {
-          "Width":  50,
-          "Height": 40
+  "outputs": {
+    "instancing": {
+      "products": {
+        "template": "src/product.svg",
+        "dataset": "products",
+        "outputTypes": [
+          "pdf"
+        ],
+        "paper": {
+          "width": 210,
+          "height": 297,
+          "tileOffset": {
+            "X": 5,
+            "Y": 8.5
+          },
+          "tileSize": {
+            "Width": 50,
+            "Height": 40
+          }
+        }
+      },
+      "products_with_svg": {
+        "template": "src/product.svg",
+        "dataset": "products",
+        "outputTypes": [
+          "pdf",
+          "svg"
+        ],
+        "paper": {
+          "width": 210,
+          "height": 297,
+          "tileOffset": {
+            "X": 1,
+            "Y": 2
+          },
+          "tileSize": {
+            "Width": 22,
+            "Height": 23
+          }
+        }
+      },
+      "series": {
+        "template": "src/series.svg",
+        "dataset": "series",
+        "outputTypes": [
+          "pdf",
+          "svg"
+        ],
+        "paper": {
+          "width": 210,
+          "height": 297,
+          "tileOffset": {
+            "X": 4,
+            "Y": 5
+          },
+          "tileSize": {
+            "Width": 42,
+            "Height": 54
+          }
         }
       }
     },
-    "products_with_svg": {
-      "template": "src/product.svg",
-      "dataset": "products",
-      "outputMimetypes": [
-        "pdf",
-        "svg"
-      ],
-      "paper": {
-        "width": 210,
-        "height": 297,
-        "tileOffset": {
-          "X": 1,
-          "Y": 2
-        },
-        "tileSize": {
-          "Width":  22,
-          "Height": 23
+    "tiling": {
+      "general-info": {
+        "template": "src/general-info.svg",
+        "outputTypes": [
+          "pdf"
+        ],
+        "paper": {
+          "width": 210,
+          "height": 297,
+          "tileOffset": {
+            "X": 7.5,
+            "Y": 8.5
+          },
+          "tileSize": {
+            "Width": 65,
+            "Height": 40
+          }
         }
-      }
-    },
-    "series": {
-      "template": "src/series.svg",
-      "dataset": "series",
-      "outputMimetypes": [
-        "pdf",
-        "svg"
-      ],
-      "paper": {
-        "width": 210,
-        "height": 297,
-        "tileOffset": {
-          "X": 4,
-          "Y": 5
-        },
-        "tileSize": {
-          "Width":  42,
-          "Height": 54
+      },
+      "general-info-with-svg": {
+        "template": "src/general-info.svg",
+        "outputTypes": [
+          "pdf",
+          "svg"
+        ],
+        "paper": {
+          "width": 210,
+          "height": 297,
+          "tileOffset": {
+            "X": 7.5,
+            "Y": 8.5
+          },
+          "tileSize": {
+            "Width": 65,
+            "Height": 40
+          }
         }
       }
     }

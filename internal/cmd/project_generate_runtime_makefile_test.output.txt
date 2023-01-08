@@ -12,8 +12,10 @@ OUTPUTS_series_svg := $(patsubst src/series/%.json, ${OUT_DIR}/series/%.svg, ${D
 OUTPUTS_products_PAPER := --paper-size "210.000x297.000" --label-offset "5.000,8.500" --label-size "50.000x40.000" --label-spacing "0.000,0.000"
 OUTPUTS_products_with_svg_PAPER := --paper-size "210.000x297.000" --label-offset "1.000,2.000" --label-size "22.000x23.000" --label-spacing "0.000,0.000"
 OUTPUTS_series_PAPER := --paper-size "210.000x297.000" --label-offset "4.000,5.000" --label-size "42.000x54.000" --label-spacing "0.000,0.000"
+OUTPUTS_tiling_general-info_PAPER := --paper-size "210.000x297.000" --label-offset "7.500,8.500" --label-size "65.000x40.000" --label-spacing "0.000,0.000"
+OUTPUTS_tiling_general-info-with-svg_PAPER := --paper-size "210.000x297.000" --label-offset "7.500,8.500" --label-size "65.000x40.000" --label-spacing "0.000,0.000"
 
-all: ${OUTPUTS_products_pdf} ${OUTPUTS_products_with_svg_pdf} ${OUTPUTS_products_with_svg_svg} ${OUTPUTS_series_pdf} ${OUTPUTS_series_svg}
+all: ${OUTPUTS_products_pdf} ${OUTPUTS_products_with_svg_pdf} ${OUTPUTS_products_with_svg_svg} ${OUTPUTS_series_pdf} ${OUTPUTS_series_svg} ${OUT_DIR}/general-info.pdf ${OUT_DIR}/general-info-with-svg.pdf ${OUT_DIR}/general-info-with-svg.svg
 
 ${TMP_DIR}/products/%.svg: src/products/%.json | ${OUT_DIR}/products
 	$(LABELSET_BIN) tile $(OUTPUTS_products_PAPER) --instance-json "$<" src/product.svg "$@"
@@ -31,6 +33,18 @@ ${OUT_DIR}/series/%.svg: src/series/%.json | ${OUT_DIR}/series
 	$(LABELSET_BIN) tile $(OUTPUTS_series_PAPER) --instance-json "$<" src/series.svg "$@"
 
 ${OUT_DIR}/series/%.pdf: ${OUT_DIR}/series/%.svg
+	inkscape "$<" --export-type="pdf" --export-filename="$@"
+
+${TMP_DIR}/general-info.svg: src/general-info.svg | ${OUT_DIR}
+	$(LABELSET_BIN) tile $(OUTPUTS_tiling_general-info_PAPER) src/general-info.svg "$@"
+
+${OUT_DIR}/general-info.pdf: ${TMP_DIR}/general-info.svg
+	inkscape "$<" --export-type="pdf" --export-filename="$@"
+
+${OUT_DIR}/general-info-with-svg.svg: src/general-info.svg | ${OUT_DIR}
+	$(LABELSET_BIN) tile $(OUTPUTS_tiling_general-info-with-svg_PAPER) src/general-info.svg "$@"
+
+${OUT_DIR}/general-info-with-svg.pdf: ${OUT_DIR}/general-info-with-svg.svg
 	inkscape "$<" --export-type="pdf" --export-filename="$@"
 
 ${OUT_DIR}: ;
